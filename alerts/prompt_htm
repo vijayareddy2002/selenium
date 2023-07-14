@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>Prompt</title>
+</head>
+<body>
+<input type="text" id="name" placeholder="Enter your name">
+<button onclick="prompt1()" name="bt">Click me!</button>
+<script>
+function prompt1() {
+  var name = prompt("What is your name?");
+  if (name != null) {
+    document.getElementById("name").value = name;
+  }
+}
+</script>
+</body>
+</html>
