@@ -1,0 +1,27 @@
+package at1;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.Alert;
+
+public class vij6 {
+
+	public static void main(String[] args)throws NoAlertPresentException {
+		// TODO Auto-generated method stub
+		WebDriver driver = new ChromeDriver();
+		driver.get("C:\\Users\\ajayk\\OneDrive\\Desktop\\h4.html");
+		driver.findElement(By.name("tb")).sendKeys("53920");
+		 driver.findElement(By.name("subject")).click();
+		 // Switching to Alert
+		 Alert alert = driver.switchTo().alert();
+		 // Capturing alert message.
+		 String alertMessage= driver.switchTo().alert().getText();
+		 System.out.println(alertMessage);
+		 // Displaying alert message
+		 System.out.println(alertMessage);
+		 // Accepting alert
+		 alert.accept();
+	}
+
+}
