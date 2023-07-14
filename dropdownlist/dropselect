@@ -1,0 +1,19 @@
+package at1;
+import java.util.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+public class vij4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+WebDriver driver=new ChromeDriver();
+driver.get("C:\\Users\\ajayk\\OneDrive\\Desktop\\h2.html");
+WebElement element=driver.findElement(By.name("Mobiles"));
+Select se=new Select(element);
+se.selectByIndex(1);
+se.selectByValue("2");
+se.selectByVisibleText("HTC");
+	}
+
+}
