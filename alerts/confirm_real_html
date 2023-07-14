@@ -1,0 +1,14 @@
+<input type="text" name="a">
+<input type="button" name="b" value="click" onclick="confirm('are you sure to do this?')">
+<script>
+function confirm(res){
+String result=window.confirm(res);
+if(result){
+alret('you clicked ok');
+return 1;
+}
+else{
+alret('you clicked cancel');
+return 0;
+}
+</script>
