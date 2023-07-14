@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The button name attribute</h1>
+
+name<input type="text" name="tb">
+<input  type="button" name="subject" value="HTML" onclick="alert('This is an alert message.')">
+
+</body>
+</html>
