@@ -4,31 +4,38 @@
 *getwindowHandle()---->gets currently opened single window only i.e parent
 *getwindowHandles()--->gives all currently opened windows
 ------->>>>>>>>>>>>______________________________
+package at1;
 import java.util.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-public class WindowOperation {
-public static void main(String[] args) throws Exception {
-WebDriver driver = new ChromeDriver();
-driver.get("http://www.naukri.com/");
-driver.manage().window().maximize();
-driver.manage().window().minimize();
-System.out.println("Title: "+driver.getTitle());
-String parent=driver.getWindowHandle();
-Set<String>s=driver.getWindowHandles();
-Iterator<String> I1= s.iterator();
-while(I1.hasNext())
-{
-String child_window=I1.next();
-if(!parent.equals(child_window))
-{
-driver.switchTo().window(child_window);
-System.out.println(driver.switchTo().window(child_window).getTitle());
-driver.close();
-}
-}
-driver.switchTo().window(parent);
-}
+public class vij2 {
+
+	public static void main(String[] args) {
+	WebDriver driver=new ChromeDriver();
+	driver.get("https://www.firstnaukri.com/");
+	driver.manage().window().minimize();
+	driver.manage().window().maximize();
+	String p=driver.getWindowHandle();
+	driver.switchTo().newWindow(WindowType.TAB);
+	driver.get("https://www.selenium.dev/documentation/webdriver/interactions/windows/");
+	driver.findElement(By.linkText("Downloads")).click();
+	 Set <String> ss=driver.getWindowHandles();
+	 Iterator<String> I= ss.iterator();
+	 while(I.hasNext()) {
+		  String child=I.next();
+		  if(!p.equals(child)) {
+			  driver.switchTo().window(child);
+			  System.out.println("shifted to child");
+			  System.out.println(driver.switchTo().window(child).getTitle());
+			  driver.close();
+		  }
+	 }
+
+	 driver.switchTo().window(p);
+	}
+
 }
 
-
+output:
+shifted to child
+Downloads | Selenium
