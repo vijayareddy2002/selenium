@@ -1,0 +1,29 @@
+// driver operations
+//driver.getTitle()
+//driver.manage().
+
+
+package at1;
+import java.util.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import java.time.Duration;
+public class vij3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+WebDriver driver=new ChromeDriver();
+driver.get("https://www.selenium.dev/selenium/web/web-form.html");
+WebElement tb=driver.findElement(By.name("my-text"));
+tb.sendKeys("vijaya");
+WebElement tc=driver.findElement(By.cssSelector("button"));
+tc.click();
+WebElement m=driver.findElement(By.id("message"));
+String value=m.getText();
+System.out.println("value after submit:"+value);
+
+	}
+
+}
+
+value after submit:Received!
